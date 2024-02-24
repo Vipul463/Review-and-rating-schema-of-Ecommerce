@@ -1,0 +1,68 @@
+//Rating Schema
+
+const mongoose = require('mongoose');
+const {Schema} = mongose;
+
+const ratingSchema = new Schema((
+ user: {
+   type: mongoose.Schema.Types.ObjectId,
+   ref: 'users',
+   required: true,
+},
+product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'products',
+    required: true,
+},
+rating: {
+  type: Number,
+  required: true,
+},
+CreatedAt: {
+   type: Date,
+   default: Date .now,
+ },
+});
+
+Const Rating = mongoose.model('ratings', ratingSchema);
+module.exports = Rating;
+
+
+//Review Schema
+
+
+const mongoose = require('mongoose');
+const {Schema} = mongose;
+
+const reviewSchema = new Schema((
+review: {
+   type: String,
+   required: true,
+},
+
+product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'products',
+    required: true,
+},
+
+user: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'users',
+  required: true,
+},
+
+CreatedAt: {
+   type: Date,
+   default: Date .now(),
+ },
+});
+
+Const Review = mongoose.model('reviews', reviewSchema);
+module.exports = Review;
+
+
+
+
+
+
